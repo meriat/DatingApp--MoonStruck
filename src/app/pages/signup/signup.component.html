@@ -1,8 +1,13 @@
-<app-navbar></app-navbar>
 <div class="container d-flex justify-content-center align-items-center">
   <div class="form-wrapper text-center">
-    <h2 class="text-center">Login</h2>
-    <form [formGroup]="loginForm" (submit)="submit()" novalidate>
+    <h2 class="text-center">Sign Up</h2>
+    <form [formGroup]="signupForm" (submit)="submit()" novalidate>
+      <div class="form-group">
+        <input type="text" id="first-name-input" placeholder="Enter First Name" formControlName="firstName">
+      </div>
+      <div class="form-group">
+        <input type="text" id="last-name-input" placeholder="Enter last Name" formControlName="lastName">
+      </div>
       <div class="form-group">
         <input type="email" id="email-input" placeholder="Enter Email" formControlName="email">
       </div>
@@ -11,6 +16,6 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <small><a routerLink="/signup">Sign Up</a></small>
+    <small><a routerLink="/login">Already Signed Up</a></small>
   </div>
 </div>
