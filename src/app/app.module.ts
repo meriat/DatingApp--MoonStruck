@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
 
@@ -28,7 +29,8 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

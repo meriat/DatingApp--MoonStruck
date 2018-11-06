@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatInputComponent implements OnInit {
 
+public newMessageText: string = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public submit(message: string): void{
+    console.log('new message', message);
+
+    //reset input
+    this.newMessageText ='';
   }
 
 }
