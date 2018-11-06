@@ -16,6 +16,9 @@ public newMessageText: string = '';
 
   public submit(message: string): void{
     console.log('new message', message);
+
+    //reset input
+    this.newMessageText ='';
   }
 
 }
