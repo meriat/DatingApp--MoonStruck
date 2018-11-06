@@ -1,0 +1,11 @@
+.chat-message{
+    padding: 1.5em;
+    width: 200px;
+}
+
+.chat-message,img{
+    margin-right: 1em;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
