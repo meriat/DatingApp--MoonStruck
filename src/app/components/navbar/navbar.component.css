@@ -1,0 +1,9 @@
+a{
+    color: white;
+    margin-right: 3em;
+}
+
+a:hover{
+    color: gold;
+    text-decoration: underline;
+}
