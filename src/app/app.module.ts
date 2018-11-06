@@ -6,6 +6,9 @@ import { routing } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
+
+import { SurveyComponent } from './survey/survey.component';
+
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ChatComponent } from './pages/chat/chat.component';
@@ -19,7 +22,8 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
   declarations: [
     AppComponent,
     LoginComponent, 
-    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent
+    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent
+
   ],
   imports: [
     BrowserModule,
