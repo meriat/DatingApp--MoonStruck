@@ -18,7 +18,7 @@ export class AuthService {
     private db: AngularFirestore
   ) { 
 
-this.currentUser = this.afAuth.authState
+    this.currentUser = this.afAuth.authState
     .switchMap((user)=> {
       if (user){
         return this.db.doc<User>(`users/${user.uid}`).valueChanges();
@@ -30,11 +30,20 @@ this.currentUser = this.afAuth.authState
   public signup(firstName: string, lastName: string, email: string, password: string): Observable<boolean>{
     return Observable.fromPromise(
       this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((user)=>{
-        const userRef: AngularFirestoreDocument<User> = this.db.doc(`users/${user.uid}`);
+      .then((user) => {
+        const userRef: AngularFirestoreDocument<User> = this.db.doc(`users/${user.user.uid}`);
+        const updatedUser = {
+          id: user.user.uid,
+          email,
+          firstName,
+          lastName,
+          photoUrl: 'https://firebasestorage.googleapis.com/v0/b/moonstruck-a75bd.appspot.com/o/defaultpic.jpg?alt=media&token=103aa7b2-d9ba-4af4-a330-926d4cea51dd'
+        }
+        userRef.set(updatedUser);
         return true;
       })
-    )
+      .catch((err)=> false)
+    );
 
   }
 
