@@ -19,8 +19,8 @@ import { SplashComponent } from './splash/splash.component';
 import { AuthGuard } from './guards/auth.guard';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+// import { AngularFirestoreModule } from 'angularfire2/firestore';
+// import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
@@ -39,9 +39,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     routing,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireAuthModule
+    // AngularFirestoreModule,
+    // AngularFireStorageModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
