@@ -1,9 +1,14 @@
 a{
     color: white;
-    margin-right: 3em;
+    margin-right: 1em;
 }
 
 a:hover{
     color: gold;
     text-decoration: underline;
+}
+
+ul{
+    list-style-type: none;
+    columns: 2;
 }

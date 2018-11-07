@@ -2,14 +2,25 @@
   <div class="container">
     <span class="navbar-brand">ChattApp</span>
     <div class="page-links">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav"  *ngIf="!auth.currentUser else loggedOut">
         <li class="nav-items">
           <a  routerLink="/chat" routerLinkActive="active" class="navlink">ChatRooms</a>
         </li>
         <li class="nav-items">
-            <a  routerLink="/login"  class="navlink">Logout</a>
+            <a  (click)='auth.logout()'  class="navlink">Logout</a>
           </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<ng-template #loggedOut>
+  <ul class="nav-bar-nav">
+    <li class="nav-item">
+      <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/signup" routerLinkActive="active" class="nav-link">Sign Up</a>
+      </li>
+  </ul>
+</ng-template>

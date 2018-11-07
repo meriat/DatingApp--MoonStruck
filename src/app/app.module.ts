@@ -18,6 +18,7 @@ import { ChatroomListComponent } from './pages/chat/components/chatroom-list/cha
 import { ChatroomTitleBarComponent } from './pages/chat/components/chatroom-title-bar/chatroom-title-bar.component';
 import { ChatMessagesComponent } from './pages/chat/components/chat-messages/chat-messages.component';
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
+import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
     routing,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
