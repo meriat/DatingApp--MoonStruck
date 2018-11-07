@@ -3,12 +3,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app-routing.module';
-
-
 import { AppComponent } from './app.component';
-
 import { SurveyComponent } from './survey/survey.component';
-
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ChatComponent } from './pages/chat/chat.component';
@@ -19,11 +15,13 @@ import { ChatroomTitleBarComponent } from './pages/chat/components/chatroom-titl
 import { ChatMessagesComponent } from './pages/chat/components/chat-messages/chat-messages.component';
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
 import { AuthService } from './services/auth.service';
+import { SplashComponent } from './splash/splash.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent, 
-    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent
+    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent, SplashComponent
 
   ],
   imports: [
