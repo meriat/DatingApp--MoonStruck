@@ -18,11 +18,12 @@ import { ChatroomListComponent } from './pages/chat/components/chatroom-list/cha
 import { ChatroomTitleBarComponent } from './pages/chat/components/chatroom-title-bar/chatroom-title-bar.component';
 import { ChatMessagesComponent } from './pages/chat/components/chat-messages/chat-messages.component';
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
+import { SplashComponent } from './splash/splash.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent, 
-    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent
+    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent, SplashComponent
 
   ],
   imports: [
