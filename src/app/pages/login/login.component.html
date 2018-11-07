@@ -1,16 +1,20 @@
-<app-navbar></app-navbar>
-<div class="container d-flex justify-content-center align-items-center">
-  <div class="form-wrapper text-center">
-    <h2 class="text-center">Login</h2>
-    <form [formGroup]="loginForm" (submit)="submit()" novalidate>
-      <div class="form-group">
-        <input type="email" id="email-input" placeholder="Enter Email" formControlName="email">
-      </div>
-      <div class="form-group">
-        <input type="password" id="password-input" placeholder="Enter Password" formControlName="password">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <small><a routerLink="/signup">Sign Up</a></small>
-  </div>
+<!-- <app-navbar></app-navbar> -->
+<div class="container-fluid">
+
+    <img src="../../../assets/img/hangheart.jpeg">
+    <div class="content">
+      <div class="login">
+      <h1 class="animated rollIn delay-1s">Login</h1>
+      <form [formGroup]="loginForm" (submit)="submit()" novalidate>
+        <div class="form-group">
+          <input type="email" id="email-input" placeholder="Enter Email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <input type="password" id="password-input" placeholder="Enter Password" formControlName="password">
+        </div>
+        <button type="submit" class="btn"><b>Submit</b></button>
+      </form>
+     <a routerLink="/signup"><p>Sign Up</p></a>
+    </div>
+    </div>
 </div>
