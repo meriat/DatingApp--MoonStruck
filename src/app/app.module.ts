@@ -16,6 +16,7 @@ import { ChatMessagesComponent } from './pages/chat/components/chat-messages/cha
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
 import { AuthService } from './services/auth.service';
 import { SplashComponent } from './splash/splash.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { SplashComponent } from './splash/splash.component';
     routing,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
