@@ -1,16 +1,34 @@
+
+import { OnInit, Component } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase, FirebaseListObservable,FirebaseObjectObservable } from 'angularfire2/database';
+import { MatchService } from 'app/services/match.service';
+
 import { Component } from '@angular/core';
 import { ProfileComponent } from '../profile/profile.component'
+
 
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
-  styleUrls: ['./survey.component.css']
+  styleUrls: ['./survey.component.css'],
+  providers: [AuthService, MatchService, AngularFireDatabase]
 })
 
-export class SurveyComponent {
+export class SurveyComponent implements OnInit {
   model;
   trait;
-  constructor() {
+  user;
+  userEmail;
+  matches;
+  constructor(
+    private auth: AuthService,
+    private matchService: MatchService,
+    db: AngularFireDatabase, 
+    // afAuth: AngularFireAuth
+  ) {
     this.model = {
       question1: "",
       question2: "",
@@ -19,8 +37,31 @@ export class SurveyComponent {
       question5: ""
 
     };
+
     // console.log(this.model);
   }
+
+  ngOnInit() {
+    this.matchService.getMatches().subscribe(dataLastEmittedFromObserver => {
+      this.matches = dataLastEmittedFromObserver;
+      console.log(this.matches);
+    });
+
+    this.user = firebase.auth().currentUser;
+
+    if (this.user != null) {
+      this.userEmail = this.user.email;
+      console.log(this.userEmail);
+    } else {
+      console.log("Null");
+    }
+  }
+
+  // ngDoCheck() {
+    
+
+    
+  // }
 
   findTrait() {
     if ((this.model.question1 === 'romantic' || this.model.question1 === 'clubbing') && (this.model.question2 === 'relax' || this.model.question2 === 'sun') && this.model.question3 === 'true' && this.model.question4 === 'no' && (this.model.question5 === 'loyal' || this.model.question5 === 'success')) {
@@ -37,6 +78,32 @@ export class SurveyComponent {
     }
     else {
       this.trait = "brown";
+    }
+    this.updateColorInDB(this.trait)
+  }
+
+  updateColorInDB(newColor: string) {
+    let changed: boolean = false;
+    this.matches.forEach(element => {
+      if (element.email == this.userEmail) {
+        console.log(element);
+        element.color = newColor;
+        changed = true;
+      }
+    });
+    if (changed == false) {
+      console.log("new entry");
+      let newUserName = "New User";
+      if (this.user.displayName != null) {
+        newUserName = this.user.displayName;
+      }
+      let newResult = {
+        color: newColor,
+        email: this.userEmail,
+        username: newUserName
+      }
+      this.matchService.addEntry(newResult);
+      console.log(this.matches);
     }
   }
 

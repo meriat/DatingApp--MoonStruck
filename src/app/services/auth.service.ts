@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 import { User } from '../classes/user';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
-// import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import 'rxjs/add/observable/of';
 
 @Injectable()
 export class AuthService {
   currentUID: string;
+  trait: string;
 
   public currentUser: Observable<firebase.User | null>;
 

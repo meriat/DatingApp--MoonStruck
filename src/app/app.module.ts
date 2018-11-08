@@ -22,6 +22,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { MatchService } from './services/match.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     // AngularFirestoreModule,
     // AngularFireStorageModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, MatchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
