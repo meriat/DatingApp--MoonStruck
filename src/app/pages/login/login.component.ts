@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;
+        this.router.navigate(["/chat"]);
       }
     })
 }
@@ -41,11 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login(userEmail: string, userPassword: string) {
     this.authService.login(userEmail, userPassword);
-    this.authService.currentUser.subscribe(user => {
-      if (user == null) {
-        this.isLoggedIn = false;
-      }
-    });
+    
   }
 
   authStatus() {
@@ -53,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       alert("Login failed. Please try again.");
     }
     else {
-      this.router.navigate(['chat']);
+      this.router.navigate(['/chat']);
     }
   }
 

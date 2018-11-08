@@ -26,6 +26,7 @@ export class AuthService {
 
   logout(){
     this.firebaseAuth.auth.signOut();
+    this.router.navigate(['/login']);
   }
 
   signup(userEmail: string, userPassword: string) {
@@ -35,34 +36,4 @@ export class AuthService {
       firebase.database().ref('users/' + this.currentUID);
     });
   }
-
-  // public signup(email: string, password: string){
-  //   this.firebaseAuth
-  //     .auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then(value => {
-  //       console.log('Success!', value);
-  //     })
-  //     .catch(err => {
-  //       console.log('Something went wrong:',err.message);
-  //     });    
-  // }
-
-  // public login(email: string, password: string){
-  //   this.firebaseAuth
-  //     .auth
-  //     .signInWithEmailAndPassword(email, password)
-  //     .then(value => {
-  //       console.log('Nice, it worked!');
-  //     })
-  //     .catch(err => {
-  //       console.log('Something went wrong:',err.message);
-  //     });
-  // }
-
-  // public logout(){
-  //   this.firebaseAuth
-  //     .auth
-  //     .signOut();
-  // }
 }
