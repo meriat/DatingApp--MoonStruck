@@ -16,9 +16,9 @@ import { MatchService } from 'app/services/match.service';
   providers: [AuthService, MatchService, AngularFireDatabase]
 })
 export class ProfileComponent implements OnInit {
+
   user;
   matches;
-
   constructor(
     private auth: AuthService,
     private matchService: MatchService,
@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
       console.log(this.matches);
     });
   }
-
+  
   public logout(){
     this.auth.logout();
   }

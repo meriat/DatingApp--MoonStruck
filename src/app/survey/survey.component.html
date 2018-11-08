@@ -16,7 +16,6 @@
           <label><input type="radio" ng-control="options" name="question1" [value]="'boring'" [(ngModel)]="model.question1">&nbsp;Visit
             a theatre/watch something</label>
         </div>
-
         <h5>What is ideal holiday</h5>
         <div class="radio">
           <label><input type="radio" ng-control="options" name="question2" [value]="'relax'" [(ngModel)]="model.question2">&nbsp;A
@@ -75,5 +74,19 @@
       <hr>
       <h3>Your trait color is: {{this.trait}}</h3>
     </div>
+
   </div>
+</body>
+    <button class="btn btn-info" (click)="findTrait()">Find the "one"</button>
+  </form>
+  <hr>
+  <h3>Your trait color is: {{this.trait}}</h3>
+</div>
+</div>
+<button calss="btn btn-info"><a href="/profile">Click To Go Back To Profile And See Matches</a></button>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
