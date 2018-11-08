@@ -2,12 +2,12 @@
   <div class="container">
     <span class="navbar-brand">ChattApp</span>
     <div class="page-links">
-      <ul class="navbar-nav"  *ngIf="!auth.currentUser else loggedOut">
+      <ul class="navbar-nav"  *ngIf="auth.currentUser" else loggedOut>
         <li class="nav-items">
           <a  routerLink="/chat" routerLinkActive="active" class="navlink">ChatRooms</a>
         </li>
         <li class="nav-items">
-            <a  (click)='auth.logout()'  class="navlink">Logout</a>
+            <a  (click)='logout()'  class="navlink">Logout</a>
           </li>
       </ul>
     </div>
