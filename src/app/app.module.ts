@@ -22,14 +22,13 @@ import { AngularFireModule } from 'angularfire2';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
 // import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
-
+import { MatchesComponent } from './matches/matches.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent, 
-    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent, SplashComponent
+    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent, SplashComponent, MatchesComponent
 
   ],
   imports: [
