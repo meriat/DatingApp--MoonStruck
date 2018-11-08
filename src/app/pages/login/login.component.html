@@ -2,14 +2,14 @@
 <div class="container d-flex justify-content-center align-items-center">
   <div class="form-wrapper text-center">
     <h2 class="text-center">Login</h2>
-    <form [formGroup]="loginForm" (submit)="submit()" novalidate>
+    <form >
       <div class="form-group">
-        <input type="email" id="email-input" placeholder="Enter Email" formControlName="email">
+        <input #email type="email" id="email-input" placeholder="Enter Email">
       </div>
       <div class="form-group">
-        <input type="password" id="password-input" placeholder="Enter Password" formControlName="password">
+        <input #password type="password" id="password-input" placeholder="Enter Password">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" (click)="login(email.value, password.value); authStatus()" class="btn btn-primary">Submit</button>
     </form>
     <small><a routerLink="/signup">Sign Up</a></small>
   </div>

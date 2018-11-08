@@ -10,6 +10,7 @@ import 'rxjs/add/observable/of';
 
 @Injectable()
 export class AuthService {
+  currentUID: string;
 
   public currentUser: Observable<firebase.User | null>;
 
@@ -19,35 +20,49 @@ export class AuthService {
     ) { 
       this.currentUser = firebaseAuth.authState;
   }
-
-
-  public signup(firstName: string, lastName: string, email: string, password: string){
-    this.firebaseAuth
-      .auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log('Success!', value);
-      })
-      .catch(err => {
-        console.log('Something went wrong:',err.message);
-      });    
+  login(userEmail: string, userPassword: string) {
+    this.firebaseAuth.auth.signInWithEmailAndPassword(userEmail,userPassword);
   }
 
-  public login(email: string, password: string){
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log('Nice, it worked!');
-      })
-      .catch(err => {
-        console.log('Something went wrong:',err.message);
-      });
+  logout(){
+    this.firebaseAuth.auth.signOut();
   }
 
-  public logout(){
-    this.firebaseAuth
-      .auth
-      .signOut();
+  signup(userEmail: string, userPassword: string) {
+    this.firebaseAuth.auth.createUserWithEmailAndPassword(userEmail,userPassword).then( () => {
+      this.currentUID = firebase.auth().currentUser.uid;
+      console.log(this.currentUID);
+      firebase.database().ref('users/' + this.currentUID);
+    });
   }
+
+  // public signup(email: string, password: string){
+  //   this.firebaseAuth
+  //     .auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then(value => {
+  //       console.log('Success!', value);
+  //     })
+  //     .catch(err => {
+  //       console.log('Something went wrong:',err.message);
+  //     });    
+  // }
+
+  // public login(email: string, password: string){
+  //   this.firebaseAuth
+  //     .auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then(value => {
+  //       console.log('Nice, it worked!');
+  //     })
+  //     .catch(err => {
+  //       console.log('Something went wrong:',err.message);
+  //     });
+  // }
+
+  // public logout(){
+  //   this.firebaseAuth
+  //     .auth
+  //     .signOut();
+  // }
 }
