@@ -1,5 +1,9 @@
-body{
+#survey{
     background-image: url('../../assets/img/gold.jpg');
+<<<<<<< HEAD
+=======
+    width: 100%;
+>>>>>>> 4bffa1df6c2f82b0c483b855b57b4d8f432fb89d
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
