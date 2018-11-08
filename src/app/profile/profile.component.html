@@ -1,13 +1,14 @@
 <div class="container-fluid" id="galaxy">
   <div class="jumbotron">
       <img id="pro" src='../../assets/img/profile.jpeg' >
-    <h1>User's name</h1>
+    <h1>Hello, {{(user | async)?.email}}</h1>
   </div>
   <div class="navbar" id="private">
       <ul class="main-menu-list">
         <li class="personal"><a href="#" rel="menuitem">Edit</a></li>
         <li class="business"><a routerLink="/survey" rel="menuitem">&nbsp;Survey</a></li>
-        <li><a routerLink="Send" rel="menuitem">&nbsp;Chat</a></li>
+        <li><a routerLink="/chat" rel="menuitem">&nbsp;Chat</a></li>
+        <li *ngIf="auth.currentUser" else loggedOut><a (click)='logout()'  class="navlink">&nbsp;Logout</a></li>
       </ul>
     </div>
 </div>
