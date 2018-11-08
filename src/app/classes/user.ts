@@ -3,8 +3,8 @@ export class User {
     lastName: string;
     photoUrl: string;
     uid: string;
-    
-    constructor({firstName, lastName, photoUrl,uid}){
+
+    constructor({ firstName, lastName, photoUrl, uid }) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.photoUrl = photoUrl;
