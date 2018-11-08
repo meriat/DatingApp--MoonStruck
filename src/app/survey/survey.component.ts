@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProfileComponent } from '../profile/profile.component'
 
 @Component({
   selector: 'app-survey',
@@ -25,7 +26,7 @@ export class SurveyComponent {
     if ((this.model.question1 === 'romantic' || this.model.question1 === 'clubbing') && (this.model.question2 === 'relax' || this.model.question2 === 'sun') && this.model.question3 === 'true' && this.model.question4 === 'no' && (this.model.question5 === 'loyal' || this.model.question5 === 'success')) {
       this.trait = "blue";
     }
-    else if ((this.model.question1 === 'boring' && this.model.question1 === 'clubbing') && (this.model.question2 === 'sun' || this.model.question2 === 'activity') && (this.model.question3 === 'false' || this.model.question3 === 'not') && this.model.question4 === 'yes' && (this.model.question5 === 'fun' || this.model.question5 === 'success')) {
+    else if ((this.model.question1 === 'boring' && this.model.question1 === 'clubbing') && (this.model.question2 === 'sun' || this.model.question2 === 'activity') && this.model.question3 === 'not' && this.model.question4 === 'yes' && (this.model.question5 === 'fun' || this.model.question5 === 'success')) {
       this.trait = "yellow";
     }
     else if ((this.model.question1 === 'boring' || this.model.question1 === 'romantic') && (this.model.question2 === 'explore' || this.model.question2 === 'activity') && (this.model.question3 === 'false' || this.model.question3 === 'not') && this.model.question4 === 'yes' && (this.model.question5 === 'fun' || this.model.question5 === 'loyal')) {
