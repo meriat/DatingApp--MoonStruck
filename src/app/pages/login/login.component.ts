@@ -31,13 +31,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;
-        this.router.navigate(["/chat"]);
+        this.router.navigate(["/profile"]);
       }
     })
 }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/chat';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile';
   }
 
   login(userEmail: string, userPassword: string) {
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       alert("Login failed. Please try again.");
     }
     else {
-      this.router.navigate(['/chat']);
+      this.router.navigate(['/profile']);
     }
   }
 
