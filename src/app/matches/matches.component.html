@@ -1,105 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      background-color: #ccffff;
-    }
-    .header {
-      background-color: lightblue;
-      color: black;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      padding: 15px;
-      text-shadow: 2px 2px white;
-    }
-
-
-    .column {
-      float: left;
-      padding: 15px;
-    }
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    .sidemenu {
-      width: 25%;
-    }
-    .content {
-      width: 75%;
-    }
-    .sidemenu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    .sidemenu li a {
-      margin-bottom: 4px;
-      display: block;
-      padding: 8px;
-      background-color: lightblue;
-      text-decoration: none;
-      color: black;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    }
-    .sidemenu li a:hover {
-      background-color: darkblue ;
-      color: white;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    }
-    #dropdown:hover #content {
-      display: block;
-    }
-    #content {
-      display: none;
-      background-color: lightblue;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      padding: 12px 16px;
-      z-index: 1;
-      color:black;
-
-    }
-    li{
-      list-style-type: none;
-    }
-    img{
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
-    }
-
-  </style>
+  
 </head>
 <body>
+    <div id="modal">
+        <img src="https://www.w3schools.com/images/w3schools_green.jpg">
+        <button id="close">Close</button>
+    </div>
+
+    <p>
+        <button id="start">Start</button>
+    </p>
   <hr>
   <div #myPanatda>
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+        <p><button id="start">Click to see more pictures of me</button></p>
         <li><a href="">Click to Chat</a></li>
       </ul>
+      <div id="modal">
+          <img src="../../assets/img/model-neil.jpg" >
+          
+          <button id="close">Close</button>
+      </div>
     </div>
+    
+    
     <div class="column content">
       <div class="header">
 <button (click)="myPanatda.innerHTML = ''">Remove Match</button>       
  <h1 style="text-align: center;">Panatda</h1>
       </div>
+      
       <div id="dropdown">
         <h1>More info about me</h1>
         <div id="content">
           <p>Did someone say food</p>
           <p>I just love puppies</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
+      <div id="shade"></div>
     </div>
   </div>
 
@@ -111,9 +55,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -127,7 +70,7 @@
         <div id="content">
           <p>I just love cats oh so much</p>
           <p>I am going to sell my ticket to London to Derek</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -141,9 +84,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -157,7 +99,7 @@
         <div id="content">
           <p>I love telling people they are wrong even if they are right</p>
           <p>The world best rapper</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -171,9 +113,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -187,7 +128,7 @@
         <div id="content">
           <p>I love the NorthWest</p>
           <p>Oh Cascadia</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -201,9 +142,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -217,7 +157,7 @@
         <div id="content">
           <p>I moved here from Korea</p>
           <p>I love collecting stuffed animals</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -231,9 +171,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -247,7 +186,7 @@
         <div id="content">
           <p>I make the best Korean fried chicken</p>
           <p>Chuck Norris does not wear a condom. Because there is no such thing as protection from Chuck Norris.</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -261,9 +200,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -277,7 +215,7 @@
         <div id="content">
           <p>I just love talking about candy</p>
           <p>I like turtles</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -291,9 +229,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -307,7 +244,7 @@
         <div id="content">
           <p>The only reason I'm on this app is to tell you that "you ain't ever going to get this"</p>
           <p>I know how to fly</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -320,9 +257,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -336,7 +272,7 @@
         <div id="content">
           <p> Stay away from me ladies. Just because I run marathons for charity doesn't mean I will donate time for you.</p>
           <p>For all the programmers out there... const conner =(u)=>!'string'</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -350,9 +286,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -366,7 +301,7 @@
         <div id="content">
           <p>Why does water always melt at 32%... DAMN YOU SCIENCE</p>
           <p>Nasa is the goal</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -379,9 +314,8 @@
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -395,7 +329,7 @@
         <div id="content">
           <p>boom chaka laka</p>
           <p>What is the flying velocity of an unladen swallow?</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
@@ -405,13 +339,12 @@
   <br>
 </div>
 <div #myKorean>
-  <div class="show" ng-app="myApp">
+  <div class="show" >
   <div class="clearfix">
     <div class="column sidemenu">
       <ul>
-        <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to save to favorites</a></li>
         <li><a href="">Click to Chat</a></li>
       </ul>
     </div>
@@ -423,14 +356,37 @@
       <div id="dropdown">
         <h1>More info about me</h1>
         <div id="content">
-          <p>I have appeared before youall to tell you to come to me and I will send you to heaven. If only for a few minutes=)</p>
+          <p>I have appeared before you all to tell you to come to me and I will send you to heaven. If only for a few minutes=)</p>
           <p>Ryan for president 2024</p>
-          <img width= "152px" height="110px" src="img/model-neil.jpg" alt="">
+          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
         </div>
       </div>
     </div>
   </div>
   </div>
 </div>
+<script>
+  var modal= document.getElementById('modal');
+  var shade= document.getElementById('shade');
+  document.getElementById('start').onclick= function() {
+      modal.style.display=shade.style.display= 'block';
+  };
+  document.getElementById('close').onclick= function() {
+      modal.style.display=shade.style.display= 'none';
+  };
+  if (!('maxHeight' in document.body.style)) {
+                function modalsize() {
+                    var top= document.documentElement.scrollTop;
+                    var winsize= document.documentElement.offsetHeight;
+                    var docsize= document.documentElement.scrollHeight;
+                    shade.style.height= Math.max(winsize, docsize)+'px';
+                    modal.style.top= top+Math.floor(winsize/3)+'px';
+                };
+                modal.style.position=shade.style.position= 'absolute';
+                window.onscroll=window.onresize= modalsize;
+                modalsize();
+            }
+
+</script>
   </body>
 </html>
