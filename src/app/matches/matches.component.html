@@ -5,10 +5,22 @@
 </head>
 <body>  
   <hr>
-  <button (click)="toggle()" id="bt">
-    {{buttonName}}
+  <button  (click)="toggleBrown()" id="brown">
+    {{buttonBrown}}
   </button>
-  <ng-container *ngIf="show">
+  <button  (click)="toggleRed()" id="red">
+    {{buttonRed}}
+  </button>
+  <button (click)="toggleBlue()" id="blue">
+    {{buttonBlue}}
+  </button>
+  <button (click)="toggleYellow()" id="yellow">
+    {{buttonYellow}}
+  </button>
+  <button (click)="toggleGreen()" id="green">
+      {{buttonGreen}}
+    </button>
+  <ng-container *ngIf="showBrown">
     <div #myPanatda>
       <div class="clearfix">
         <div class="column sidemenu">
@@ -22,8 +34,8 @@
         </div>
         <div class="column content">
           <div class="header">
-            <button (click)="myPanatda.innerHTML = ''">Remove Match</button>
-            <h1 style="text-align: center;">Panatda{{this.trait}}<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+            <button id="secondBtn" (click)="myPanatda.innerHTML = ''">Remove Match</button>
+            <h1 style="text-align: center;">Panatda&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
           </div>
           <div id="dropdown">
             <h1>More info about me</h1>
@@ -42,7 +54,8 @@
       <br>
     </div>
   </ng-container>
-  <ng-container *ngIf="show">
+  
+  <ng-container *ngIf="showBlue">
     <div #myMeria>
       <div class="clearfix">
         <div class="column sidemenu">
@@ -57,8 +70,8 @@
         </div>
         <div class="column content">
           <div class="header">
-            <button (click)="myMeria.innerHTML = ''">Remove Match</button>
-            <h1 style="text-align: center;">Meria<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+            <button id="secondBtn" (click)="myMeria.innerHTML = ''">Remove Match</button>
+            <h1 style="text-align: center;">Meria&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
           </div>
           <div id="dropdown">
             <h1>More info about me</h1>
@@ -75,6 +88,8 @@
       <br>
     </div>
   </ng-container>
+  
+  <ng-container *ngIf="showYellow">
   <div #mySkye>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -89,8 +104,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="mySkye.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Skye<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+          <button id="secondBtn" (click)="mySkye.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Skye&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
         </div>
         <div id="dropdown">
           <h1>More info about me</h1>
@@ -106,6 +121,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showGreen">
   <div #myCathy>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -120,8 +138,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myCathy.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Cathy<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+          <button id="secondBtn" (click)="myCathy.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Cathy&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
         </div>
         <div id="dropdown">
           <h1>More info about me</h1>
@@ -137,6 +155,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showRed">
   <div #myHyewon>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -151,8 +172,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myHyewon.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Hyewon<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+          <button id="secondBtn" (click)="myHyewon.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Hyewon&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
         </div>
         <div id="dropdown">
           <h1>More info about me</h1>
@@ -168,6 +189,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showBlue">
   <div #myVictoria>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -182,8 +206,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myVictoria.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Victoria<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          <button id="secondBtn" (click)="myVictoria.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Victoria&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
           </h1>
         </div>
         <div id="dropdown">
@@ -200,6 +224,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showBrown">
   <div #myKenneth>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -214,8 +241,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myKenneth.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Kenneth<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          <button id="secondBtn" (click)="myKenneth.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Kenneth&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
           </h1>
         </div>
         <div id="dropdown">
@@ -232,6 +259,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showGreen">
   <div #myDavid>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -246,8 +276,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myDavid.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">David<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          <button id="secondBtn" (click)="myDavid.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">David&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
           </h1>
         </div>
         <div id="dropdown">
@@ -264,6 +294,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showYellow">
   <div #myConnor>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -278,8 +311,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myConnor.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Connor<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          <button id="secondBtn" (click)="myConnor.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Connor&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
           </h1>
         </div>
         <div id="dropdown">
@@ -296,6 +329,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showRed">
   <div #myDerek>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -310,8 +346,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myDerek.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">Derek<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          <button id="secondBtn" (click)="myDerek.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Derek&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
           </h1>
         </div>
         <div id="dropdown">
@@ -328,6 +364,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showBlue">
   <div #myJohn>
     <div class="clearfix">
       <div class="column sidemenu">
@@ -342,8 +381,8 @@
       </div>
       <div class="column content">
         <div class="header">
-          <button (click)="myJohn.innerHTML = ''">Remove Match</button>
-          <h1 style="text-align: center;">John<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          <button id="secondBtn" (click)="myJohn.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">John&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
           </h1>
         </div>
         <div id="dropdown">
@@ -360,6 +399,9 @@
     <hr>
     <br>
   </div>
+</ng-container>
+
+<ng-container *ngIf="showBlue">
   <div #myKorean>
     <div class="show" >
       <div class="clearfix">
@@ -375,8 +417,8 @@
         </div>
         <div class="column content">
           <div class="header">
-            <button (click)="myKorean.innerHTML = ''">Remove Match</button>
-            <h1 style="text-align: center;">Korean Jesus<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+            <button id="secondBtn" (click)="myKorean.innerHTML = ''">Remove Match</button>
+            <h1 style="text-align: center;">Korean Jesus&nbsp;<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
             </h1>
           </div>
           <div id="dropdown">
@@ -390,6 +432,6 @@
       </div>
     </div>
   </div>
-
+</ng-container>
 </body>
 </html>

@@ -17,7 +17,7 @@ import { AngularFireDatabase, FirebaseListObservable,FirebaseObjectObservable } 
 })
 export class ProfileComponent implements OnInit {
   user: Observable<firebase.User>;
-
+ 
   constructor(
     private auth: AuthService
   ) { 
@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   public logout(){
     this.auth.logout();
   }
