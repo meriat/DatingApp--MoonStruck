@@ -1,91 +1,88 @@
-<body>
-  <div id="survey">
-    <h1 style="text-align: center" class="jumbotron">Take the survey to find your matches!</h1>
-    <div class="container">
-      <form>
-        <h5>What is a fun night out for you?</h5>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question1" [value]="'romantic'" [(ngModel)]="model.question1">&nbsp;Romantic
-            Dinner for two</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question1" [value]="'clubbing'" [(ngModel)]="model.question1">&nbsp;Drinks
-            and dancing</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question1" [value]="'boring'" [(ngModel)]="model.question1">&nbsp;Visit
-            a theatre/watch something</label>
-        </div>
-        <h5>What is ideal holiday</h5>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question2" [value]="'relax'" [(ngModel)]="model.question2">&nbsp;A
-            cottage in the country</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question2" [value]="'activity'" [(ngModel)]="model.question2">&nbsp;Activity
-            based eg. skiing/swimming</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question2" [value]="'explore'" [(ngModel)]="model.question2">&nbsp;Exploring
-            the far East</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question2" [value]="'sun'" [(ngModel)]="model.question2">&nbsp;Lying
-            on the beach in the sun</label>
-        </div>
+<div id="survey">
+  <h1 style="text-align: center" class="jumbotron">Take the survey to find your matches!</h1>
+  <div class="container">
+    <form>
+      <h5>What is a fun night out for you?</h5>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question1" [value]="'romantic'" [(ngModel)]="model.question1">&nbsp;Romantic
+          Dinner for two</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question1" [value]="'clubbing'" [(ngModel)]="model.question1">&nbsp;Drinks
+          and dancing</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question1" [value]="'boring'" [(ngModel)]="model.question1">&nbsp;Visit
+          a theatre/watch something</label>
+      </div>
+      <h5>What is ideal holiday</h5>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question2" [value]="'relax'" [(ngModel)]="model.question2">&nbsp;A
+          cottage in the country</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question2" [value]="'activity'" [(ngModel)]="model.question2">&nbsp;Activity
+          based eg. skiing/swimming</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question2" [value]="'explore'" [(ngModel)]="model.question2">&nbsp;Exploring
+          the far East</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question2" [value]="'sun'" [(ngModel)]="model.question2">&nbsp;Lying
+          on the beach in the sun</label>
+      </div>
 
-        <h5>Do you care if your partner smokes?</h5>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question3" [value]="'true'" [(ngModel)]="model.question3">&nbsp;Yes</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question3" [value]="'false'" [(ngModel)]="model.question3">&nbsp;No</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question3" [value]="'not'" [(ngModel)]="model.question3">&nbsp;Don't
-            care</label>
-        </div>
+      <h5>Do you care if your partner smokes?</h5>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question3" [value]="'true'" [(ngModel)]="model.question3">&nbsp;Yes</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question3" [value]="'false'" [(ngModel)]="model.question3">&nbsp;No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question3" [value]="'not'" [(ngModel)]="model.question3">&nbsp;Don't
+          care</label>
+      </div>
 
-        <h5>Do you like pets?</h5>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question4" [value]="'yes'" [(ngModel)]="model.question4">&nbsp;Yes</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question4" [value]="'no'" [(ngModel)]="model.question4">&nbsp;No</label>
-        </div>
+      <h5>Do you like pets?</h5>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question4" [value]="'yes'" [(ngModel)]="model.question4">&nbsp;Yes</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question4" [value]="'no'" [(ngModel)]="model.question4">&nbsp;No</label>
+      </div>
 
-        <h5>Most attractive characteristic in a person?</h5>
+      <h5>Most attractive characteristic in a person?</h5>
 
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question5" [value]="'loyal'" [(ngModel)]="model.question5">&nbsp;Loyal,
-            kind, trustworthy
-          </label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question5" [value]="'fun'" [(ngModel)]="model.question5">&nbsp;Sense
-            of fun, love of life</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" ng-control="options" name="question5" [value]="'success'" [(ngModel)]="model.question5">&nbsp;Dynamic,
-            successful</label>
-        </div>
-        <button class="btn btn-info" (click)="findTrait()">Find the "one"</button>
-      </form>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question5" [value]="'loyal'" [(ngModel)]="model.question5">&nbsp;Loyal,
+          kind, trustworthy
+        </label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question5" [value]="'fun'" [(ngModel)]="model.question5">&nbsp;Sense
+          of fun, love of life</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-control="options" name="question5" [value]="'success'" [(ngModel)]="model.question5">&nbsp;Dynamic,
+          successful</label>
+      </div>
+      <button class="btn btn-info" (click)="findTrait()">Find the "one"</button>
       <hr>
       <h3>Your trait color is: {{this.trait}}</h3>
-    </div>
 
+
+      <!-- <button class="btn btn-info" (click)="findTrait()">Find the "one"</button> -->
+    </form>
+    <!-- <hr>
+    <h3>Your trait color is: {{this.trait}}</h3> -->
+
+    <button class="btn btn-info"><a href="/profile">Click To Go Back To Profile And See Matches</a></button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
-</body>
-    <button class="btn btn-info" (click)="findTrait()">Find the "one"</button>
-  </form>
-  <hr>
-  <h3>Your trait color is: {{this.trait}}</h3>
 </div>
-</div>
-<button calss="btn btn-info"><a href="/profile">Click To Go Back To Profile And See Matches</a></button>
-<br>
-<br>
-<br>
-<br>
-<br>
