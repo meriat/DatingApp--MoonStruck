@@ -1,395 +1,395 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
 </head>
-<body>
-    <div id="modal">
-        <img src="https://www.w3schools.com/images/w3schools_green.jpg">
-        <button id="close">Close</button>
-    </div>
-
-    <p>
-        <button id="start">Start</button>
-    </p>
+<body>  
   <hr>
-  <div #myPanatda>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <p><button id="start">Click to see more pictures of me</button></p>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-      <div id="modal">
-          <img src="../../assets/img/model-neil.jpg" >
-          
-          <button id="close">Close</button>
-      </div>
-    </div>
-    
-    
-    <div class="column content">
-      <div class="header">
-<button (click)="myPanatda.innerHTML = ''">Remove Match</button>       
- <h1 style="text-align: center;">Panatda</h1>
-      </div>
-      
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>Did someone say food</p>
-          <p>I just love puppies</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+  <button (click)="toggle()" id="bt">
+    {{buttonName}}
+  </button>
+  <ng-container *ngIf="show">
+    <div #myPanatda>
+      <div class="clearfix">
+        <div class="column sidemenu">
+          <ul>
+            <li><a href="/chat">Click to Chat</a></li>
+            <button class="predictionBtn " (click)="imageSource = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageSource2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageSource3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+            <img [src]="imageSource" *ngIf="imageSource" style="width: 35%"/>
+            <img [src]="imageSource2" *ngIf="imageSource2" style="width: 35%">
+            <img [src]="imageSource3" *ngIf="imageSource3" style="width: 35%">
+          </ul>
+        </div>
+        <div class="column content">
+          <div class="header">
+            <button (click)="myPanatda.innerHTML = ''">Remove Match</button>
+            <h1 style="text-align: center;">Panatda{{this.trait}}<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+          </div>
+          <div id="dropdown">
+            <h1>More info about me</h1>
+            <div id="content">
+              <p>Did someone say food</p>
+              <p>I just love puppies</p>
+              <p>What do you get when you mix a shih tzu and a bull dog?</p>
+            </div>
+          </div>
+          <div id="shade"></div>
         </div>
       </div>
-      <div id="shade"></div>
-    </div>
-  </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
-  <div #myMeria>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
+      <br>
+      <hr>
+      <br>
     </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myMeria.innerHTML = ''">Remove Match</button>    
-    <h1 style="text-align: center;">Meria</h1>
-      </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I just love cats oh so much</p>
-          <p>I am going to sell my ticket to London to Derek</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+  </ng-container>
+  <ng-container *ngIf="show">
+    <div #myMeria>
+      <div class="clearfix">
+        <div class="column sidemenu">
+          <ul>
+            <li><a href="/chat">Click to Chat</a></li>
+
+            <button class="predictionBtn " (click)="imageS1 = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageS2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageS3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+            <img [src]="imageS1" *ngIf="imageS1" style="width: 35%"/>
+            <img [src]="imageS2" *ngIf="imageS2" style="width: 35%">
+            <img [src]="imageS3" *ngIf="imageS3" style="width: 35%">
+          </ul>
+        </div>
+        <div class="column content">
+          <div class="header">
+            <button (click)="myMeria.innerHTML = ''">Remove Match</button>
+            <h1 style="text-align: center;">Meria<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+          </div>
+          <div id="dropdown">
+            <h1>More info about me</h1>
+            <div id="content">
+              <p>I just love cats oh so much</p>
+              <p>I am going to sell my ticket to London to Derek</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
+      <br>
+      <hr>
+      <br>
+    </div>
+  </ng-container>
   <div #mySkye>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="mySkye.innerHTML = ''">Remove Match</button>   
-     <h1 style="text-align: center;">Skye</h1>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageSkye1 = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageSkye2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageSkye3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageSkye1" *ngIf="imageSkye1" style="width: 35%"/>
+          <img [src]="imageSkye2" *ngIf="imageSkye2" style="width: 35%">
+          <img [src]="imageSkye3" *ngIf="imageSkye3" style="width: 35%">
+        </ul>
       </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I love telling people they are wrong even if they are right</p>
-          <p>The world best rapper</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+      <div class="column content">
+        <div class="header">
+          <button (click)="mySkye.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Skye<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>I love telling people they are wrong even if they are right</p>
+            <p>The world best rapper</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
+    <br>
+    <hr>
+    <br>
+  </div>
   <div #myCathy>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myCathy.innerHTML = ''">Remove Match</button>   
-     <h1 style="text-align: center;">Cathy</h1>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageCathy = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageCathy2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageCathy3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageCathy" *ngIf="imageCathy" style="width: 35%"/>
+          <img [src]="imageCathy2" *ngIf="imageCathy2" style="width: 35%">
+          <img [src]="imageCathy3" *ngIf="imageCathy3" style="width: 35%">
+        </ul>
       </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I love the NorthWest</p>
-          <p>Oh Cascadia</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+      <div class="column content">
+        <div class="header">
+          <button (click)="myCathy.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Cathy<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>I love the NorthWest</p>
+            <p>Oh Cascadia</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
+    <br>
+    <hr>
+    <br>
+  </div>
   <div #myHyewon>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myHyewon.innerHTML = ''">Remove Match</button>    
-    <h1 style="text-align: center;">Hyewon</h1>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageHyewon = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageHyewon2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageHyewon3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageHyewon" *ngIf="imageHyewon" style="width: 35%"/>
+          <img [src]="imageHyewon2" *ngIf="imageHyewon2" style="width: 35%">
+          <img [src]="imageHyewon3" *ngIf="imageHyewon3" style="width: 35%">
+        </ul>
       </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I moved here from Korea</p>
-          <p>I love collecting stuffed animals</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+      <div class="column content">
+        <div class="header">
+          <button (click)="myHyewon.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Hyewon<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt=""></h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>I moved here from Korea</p>
+            <p>I love collecting stuffed animals</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
+    <br>
+    <hr>
+    <br>
+  </div>
   <div #myVictoria>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myVictoria.innerHTML = ''">Remove Match</button>     
-   <h1 style="text-align: center;">Victoria</h1>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageVic = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageVic2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageVic3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageVic" *ngIf="imageVic" style="width: 35%"/>
+          <img [src]="imageVic2" *ngIf="imageVic2" style="width: 35%">
+          <img [src]="imageVic3" *ngIf="imageVic3" style="width: 35%">
+        </ul>
       </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I make the best Korean fried chicken</p>
-          <p>Chuck Norris does not wear a condom. Because there is no such thing as protection from Chuck Norris.</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+      <div class="column content">
+        <div class="header">
+          <button (click)="myVictoria.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Victoria<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          </h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>I make the best Korean fried chicken</p>
+            <p>Chuck Norris does not wear a condom. Because there is no such thing as protection from Chuck Norris.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
+    <br>
+    <hr>
+    <br>
+  </div>
   <div #myKenneth>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myKenneth.innerHTML = ''">Remove Match</button>   
-     <h1 style="text-align: center;">Kenneth</h1>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageKenneth = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageKenneth2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageKenneth3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageKenneth" *ngIf="imageKenneth" style="width: 35%"/>
+          <img [src]="imageKenneth2" *ngIf="imageKenneth2" style="width: 35%">
+          <img [src]="imageKenneth3" *ngIf="imageKenneth3" style="width: 35%">
+        </ul>
       </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I just love talking about candy</p>
-          <p>I like turtles</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+      <div class="column content">
+        <div class="header">
+          <button (click)="myKenneth.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Kenneth<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          </h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>I just love talking about candy</p>
+            <p>I like turtles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+  </div>
+  <div #myDavid>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageDavid = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageDavid2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageDavid3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageDavid" *ngIf="imageDavid" style="width: 35%"/>
+          <img [src]="imageDavid2" *ngIf="imageDavid2" style="width: 35%">
+          <img [src]="imageDavid3" *ngIf="imageDavid3" style="width: 35%">
+        </ul>
+      </div>
+      <div class="column content">
+        <div class="header">
+          <button (click)="myDavid.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">David<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          </h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>The only reason I'm on this app is to tell you that "you ain't ever going to get this"</p>
+            <p>I know how to fly</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+  </div>
+  <div #myConnor>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageConner = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageConner2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageConner3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageConner" *ngIf="imageConner" style="width: 35%"/>
+          <img [src]="imageConner2" *ngIf="imageConner2" style="width: 35%">
+          <img [src]="imageConner3" *ngIf="imageConner3" style="width: 35%">
+        </ul>
+      </div>
+      <div class="column content">
+        <div class="header">
+          <button (click)="myConnor.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Connor<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          </h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p> Stay away from me ladies. Just because I run marathons for charity doesn't mean I will donate time for you.</p>
+            <p>For all the programmers out there... const conner =(u)=>!'string'</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+  </div>
+  <div #myDerek>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageDerek = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageDerek2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageDerek3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageDerek" *ngIf="imageDerek" style="width: 35%"/>
+          <img [src]="imageDerek2" *ngIf="imageDerek2" style="width: 35%">
+          <img [src]="imageDerek3" *ngIf="imageDerek3" style="width: 35%">
+        </ul>
+      </div>
+      <div class="column content">
+        <div class="header">
+          <button (click)="myDerek.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">Derek<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          </h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>Why does water always melt at 32%... DAMN YOU SCIENCE</p>
+            <p>Nasa is the goal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+  </div>
+  <div #myJohn>
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li><a href="/chat">Click to Chat</a></li>
+
+          <button class="predictionBtn " (click)="imageJohn = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageJohn2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageJohn3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+          <img [src]="imageJohn" *ngIf="imageJohn" style="width: 35%"/>
+          <img [src]="imageJohn2" *ngIf="imageJohn2" style="width: 35%">
+          <img [src]="imageJohn3" *ngIf="imageJohn3" style="width: 35%">
+        </ul>
+      </div>
+      <div class="column content">
+        <div class="header">
+          <button (click)="myJohn.innerHTML = ''">Remove Match</button>
+          <h1 style="text-align: center;">John<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+          </h1>
+        </div>
+        <div id="dropdown">
+          <h1>More info about me</h1>
+          <div id="content">
+            <p>boom chaka laka</p>
+            <p>What is the flying velocity of an unladen swallow?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+  </div>
+  <div #myKorean>
+    <div class="show" >
+      <div class="clearfix">
+        <div class="column sidemenu">
+          <ul>
+            <li><a href="/chat">Click to Chat</a></li>
+
+            <button class="predictionBtn " (click)="imageRyan = '../../assets//img/model-neil.jpg'; openFirstImg()" (click)="imageRyan2 = '../../assets/img/hands.jpg'; openSecondImg()" (click)="imageRyan3 = '../../assets/img/galaxy.jpg'; openThirdImg()">Click to see more pictures of me!</button>
+            <img [src]="imageRyan" *ngIf="imageRyan" style="width: 35%"/>
+            <img [src]="imageRyan2" *ngIf="imageRyan2" style="width: 35%">
+            <img [src]="imageRyan3" *ngIf="imageRyan3" style="width: 35%">
+          </ul>
+        </div>
+        <div class="column content">
+          <div class="header">
+            <button (click)="myKorean.innerHTML = ''">Remove Match</button>
+            <h1 style="text-align: center;">Korean Jesus<img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
+            </h1>
+          </div>
+          <div id="dropdown">
+            <h1>More info about me</h1>
+            <div id="content">
+              <p>I have appeared before you all to tell you to come to me and I will send you to heaven. If only for a few minutes=)</p>
+              <p>Ryan for president 2024</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <br>
-  <hr>
-  <br>
-</div>
-<div #myDavid>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myDavid.innerHTML = ''">Remove Match</button>   
-     <h1 style="text-align: center;">David</h1>
-      </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>The only reason I'm on this app is to tell you that "you ain't ever going to get this"</p>
-          <p>I know how to fly</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-</div>
-<div #myConnor>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myConnor.innerHTML = ''">Remove Match</button>    
-    <h1 style="text-align: center;">Connor</h1>
-      </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p> Stay away from me ladies. Just because I run marathons for charity doesn't mean I will donate time for you.</p>
-          <p>For all the programmers out there... const conner =(u)=>!'string'</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-</div>
-<div #myDerek>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myDerek.innerHTML = ''">Remove Match</button>    
-    <h1 style="text-align: center;">Derek</h1>
-      </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>Why does water always melt at 32%... DAMN YOU SCIENCE</p>
-          <p>Nasa is the goal</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-</div>
-<div #myJohn>
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-<button (click)="myJohn.innerHTML = ''">Remove Match</button>    
-    <h1 style="text-align: center;">John</h1>
-      </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>boom chaka laka</p>
-          <p>What is the flying velocity of an unladen swallow?</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-</div>
-<div #myKorean>
-  <div class="show" >
-  <div class="clearfix">
-    <div class="column sidemenu">
-      <ul>
-        <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        <li><a href="">Click to see more pictures of me</a></li>
-        <li><a href="">Click to Chat</a></li>
-      </ul>
-    </div>
-    <div class="column content">
-      <div class="header">
-          <button (click)="myKorean.innerHTML = ''">Remove Match</button>
-        <h1 style="text-align: center;">Korean Jesus</h1>
-      </div>
-      <div id="dropdown">
-        <h1>More info about me</h1>
-        <div id="content">
-          <p>I have appeared before you all to tell you to come to me and I will send you to heaven. If only for a few minutes=)</p>
-          <p>Ryan for president 2024</p>
-          <img width= "152px" height="110px" src="../../assets/img/model-neil.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-<script>
-  var modal= document.getElementById('modal');
-  var shade= document.getElementById('shade');
-  document.getElementById('start').onclick= function() {
-      modal.style.display=shade.style.display= 'block';
-  };
-  document.getElementById('close').onclick= function() {
-      modal.style.display=shade.style.display= 'none';
-  };
-  if (!('maxHeight' in document.body.style)) {
-                function modalsize() {
-                    var top= document.documentElement.scrollTop;
-                    var winsize= document.documentElement.offsetHeight;
-                    var docsize= document.documentElement.scrollHeight;
-                    shade.style.height= Math.max(winsize, docsize)+'px';
-                    modal.style.top= top+Math.floor(winsize/3)+'px';
-                };
-                modal.style.position=shade.style.position= 'absolute';
-                window.onscroll=window.onresize= modalsize;
-                modalsize();
-            }
-
-</script>
-  </body>
+</body>
 </html>
