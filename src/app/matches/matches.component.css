@@ -1,6 +1,12 @@
 body {
     margin: 0;
     background-color: whitesmoke;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 250px;
+    z-index: 40;
+    margin-bottom: 100px;
+
   }
   
   .header {
