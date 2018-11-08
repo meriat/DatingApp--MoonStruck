@@ -21,10 +21,7 @@ import { ProfileComponent } from './profile/profile.component'
 import { AuthGuard } from './guards/auth.guard';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
-// import { AngularFirestoreModule } from 'angularfire2/firestore';
-// import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { MatchesComponent } from './matches/matches.component'
 
 
 @NgModule({
