@@ -1,31 +1,68 @@
 import { Injectable } from '@angular/core';
 // import { Alert } from '../alert.service'
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../classes/user';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+// import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import 'rxjs/add/observable/of';
 
 @Injectable()
 export class AuthService {
+  currentUID: string;
 
-  public currentUser: Observable<User | null>;
+  public currentUser: Observable<firebase.User | null>;
 
   constructor(
     private router: Router,
-  ) { 
-    this.currentUser = Observable.of(null);
+    private firebaseAuth: AngularFireAuth
+    ) { 
+      this.currentUser = firebaseAuth.authState;
+  }
+  login(userEmail: string, userPassword: string) {
+    this.firebaseAuth.auth.signInWithEmailAndPassword(userEmail,userPassword);
   }
 
-
-  public signup(firstName: string, lastName: string, email: string, password: string): Observable<boolean>{
-    return Observable.of(true);
+  logout(){
+    this.firebaseAuth.auth.signOut();
   }
 
-  public login(email: string, password: string): Observable<boolean>{
-    return Observable.of(true);
+  signup(userEmail: string, userPassword: string) {
+    this.firebaseAuth.auth.createUserWithEmailAndPassword(userEmail,userPassword).then( () => {
+      this.currentUID = firebase.auth().currentUser.uid;
+      console.log(this.currentUID);
+      firebase.database().ref('users/' + this.currentUID);
+    });
   }
 
-  public logout(): void{
-    this.router.navigate(['/login']);
-  }
+  // public signup(email: string, password: string){
+  //   this.firebaseAuth
+  //     .auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then(value => {
+  //       console.log('Success!', value);
+  //     })
+  //     .catch(err => {
+  //       console.log('Something went wrong:',err.message);
+  //     });    
+  // }
+
+  // public login(email: string, password: string){
+  //   this.firebaseAuth
+  //     .auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then(value => {
+  //       console.log('Nice, it worked!');
+  //     })
+  //     .catch(err => {
+  //       console.log('Something went wrong:',err.message);
+  //     });
+  // }
+
+  // public logout(){
+  //   this.firebaseAuth
+  //     .auth
+  //     .signOut();
+  // }
 }

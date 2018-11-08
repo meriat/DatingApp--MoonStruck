@@ -16,6 +16,12 @@ import { ChatMessagesComponent } from './pages/chat/components/chat-messages/cha
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
 import { AuthService } from './services/auth.service';
 import { SplashComponent } from './splash/splash.component';
+import { AuthGuard } from './guards/auth.guard';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+// import { AngularFirestoreModule } from 'angularfire2/firestore';
+// import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MatchesComponent } from './matches/matches.component'
 
 @NgModule({
@@ -30,9 +36,13 @@ import { MatchesComponent } from './matches/matches.component'
     ReactiveFormsModule,
     HttpModule,
     routing,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
+    // AngularFirestoreModule,
+    // AngularFireStorageModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

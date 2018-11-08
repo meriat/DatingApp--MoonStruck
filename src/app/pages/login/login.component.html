@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 
     <img src="../../../assets/img/hangheart.jpeg">
@@ -6,12 +7,12 @@
       <h1 class="animated rollIn delay-1s">Login</h1>
       <form [formGroup]="loginForm" (submit)="submit()" novalidate>
         <div class="form-group">
-          <input type="email" id="email-input" placeholder="Enter Email" formControlName="email">
+        <input #email type="email" id="email-input" placeholder="Enter Email">
         </div>
         <div class="form-group">
-          <input type="password" id="password-input" placeholder="Enter Password" formControlName="password">
+        <input #password type="password" id="password-input" placeholder="Enter Password">
         </div>
-        <button type="submit" class="btn"><b>Submit</b></button>
+      <button type="submit" (click)="login(email.value, password.value); authStatus()" class="btn btn-primary">Submit</button>
       </form>
       <div class="box rotate">
           <a routerLink="/signup"><p>Sign Up</p></a>
