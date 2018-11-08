@@ -7,6 +7,8 @@ import { SplashComponent } from './splash/splash.component';
 import { MatchesComponent } from './matches/matches.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SurveyComponent } from './survey/survey.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 const routes: Routes = [
     { path: '', component: SplashComponent},
@@ -16,15 +18,9 @@ const routes: Routes = [
     { path:'profile', component: ProfileComponent},
     { path: 'login', component: LoginComponent},
     { path: 'signup', component: SignupComponent},
-    { path: 'chat', component: ChatComponent},
+    { path: 'chat', component: ChatComponent, canActivate: [AuthGuard]},
     { path: '**', redirectTo:'/login'}
 ];
 
-// @NgModule({
-//     imports:[RouterModule.forRoot(routes)],
-//     exports: [RouterModule]
-// })
-
-// export class AppRoutingModule { }
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

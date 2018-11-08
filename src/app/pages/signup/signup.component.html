@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <img src="../../../assets/img/hangheart.jpeg">
   <div class="content">
@@ -5,18 +6,18 @@
         <h1 class="animated zoomIn delay-1s">Sign Up</h1>
         <form [formGroup]="signupForm" (submit)="submit()" novalidate>
             <div class="form-group">
-              <input type="text" id="first-name-input" placeholder="Enter First Name" formControlName="firstName">
+        <input #firstName type="text" id="first-name-input" placeholder="Enter First Name" formControlName="firstName">
             </div>
             <div class="form-group">
-              <input type="text" id="last-name-input" placeholder="Enter last Name" formControlName="lastName">
+        <input #lastName type="text" id="last-name-input" placeholder="Enter last Name" formControlName="lastName">
             </div>
             <div class="form-group">
-              <input type="email" id="email-input" placeholder="Enter Email" formControlName="email">
+        <input #email type="email" id="email-input" placeholder="Enter Email" formControlName="email">
             </div>
             <div class="form-group">
-              <input type="password" id="password-input" placeholder="Enter Password" formControlName="password">
+        <input #password type="password" id="password-input" placeholder="Enter Password" formControlName="password">
             </div>
-            <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+      <button type="submit" (click)="signup(email.value, password.value)" class="btn btn-primary">Submit</button>
           </form>
           <a routerLink="/login"><p>Already A Member</p></a>
     </div>
