@@ -12,57 +12,50 @@ import { Alert } from 'selenium-webdriver';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
+  user;
   public loginForm: FormGroup;
-  private subscription: Subscription [] = [];
+  private subscription: Subscription[] = [];
   private returnUrl: string;
+  email: string;
+  password: string;
+  private isLoggedIn: Boolean;
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService,
+    public authService: AuthService,
     private router: Router,
     private route: ActivatedRoute
-    ) { 
-    this.createForm();
-  }
+  ) {
+    this.authService.currentUser.subscribe(user => {
+      if (user == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.router.navigate(["/chat"]);
+      }
+    })
+}
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/chat';
   }
 
-private createForm(): void{
-  this.loginForm = this.fb.group({
-    email:['',[Validators.required, Validators.email]],
-    password: ['', Validators.required]
-  });
-}
-
-public submit(): void {
-  if (this.loginForm.valid){
-    //this.loadingService.isLoading.next(true);
-    const{ email, password } = this.loginForm.value;
-
-    this.subscription.push(
-      this.auth.login(email, password).subscribe(success =>{
-        if (success){
-          this.router.navigateByUrl(this.returnUrl);
-
-        }else{
-        //  this.loadingService.isLoading.next(false);
-        }
-      })
-    );
-
-  } else {
-  //  const failedLoginAlert =new Alert ("Your email or password were inavalid,try again",AlertType.Danger)
-     // this.loadingService.isLoading.next(false);
-  //   this.alterService.alert.next(faiedLoginAlert);
+  login(userEmail: string, userPassword: string) {
+    this.authService.login(userEmail, userPassword);
     
-
   }
-}
 
-ngOnDestroy(){
-  this.subscription.forEach(sub => sub.unsubscribe());
-}
+  authStatus() {
+    if(this.isLoggedIn == false){
+      alert("Login failed. Please try again.");
+    }
+    else {
+      this.router.navigate(['/chat']);
+    }
+  }
+
+  ngOnDestroy() {
+    this.subscription.forEach(sub => sub.unsubscribe());
+  }
 
 }

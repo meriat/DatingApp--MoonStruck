@@ -1,31 +1,39 @@
 import { Injectable } from '@angular/core';
 // import { Alert } from '../alert.service'
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../classes/user';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+// import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import 'rxjs/add/observable/of';
 
 @Injectable()
 export class AuthService {
+  currentUID: string;
 
-  public currentUser: Observable<User | null>;
+  public currentUser: Observable<firebase.User | null>;
 
   constructor(
     private router: Router,
-  ) { 
-    this.currentUser = Observable.of(null);
+    private firebaseAuth: AngularFireAuth
+    ) { 
+      this.currentUser = firebaseAuth.authState;
+  }
+  login(userEmail: string, userPassword: string) {
+    this.firebaseAuth.auth.signInWithEmailAndPassword(userEmail,userPassword);
   }
 
-
-  public signup(firstName: string, lastName: string, email: string, password: string): Observable<boolean>{
-    return Observable.of(true);
-  }
-
-  public login(email: string, password: string): Observable<boolean>{
-    return Observable.of(true);
-  }
-
-  public logout(): void{
+  logout(){
+    this.firebaseAuth.auth.signOut();
     this.router.navigate(['/login']);
+  }
+
+  signup(userEmail: string, userPassword: string) {
+    this.firebaseAuth.auth.createUserWithEmailAndPassword(userEmail,userPassword).then( () => {
+      this.currentUID = firebase.auth().currentUser.uid;
+      console.log(this.currentUID);
+      firebase.database().ref('users/' + this.currentUID);
+    });
   }
 }

@@ -1,0 +1,11 @@
+body{
+    background-image: url('../../assets/img/vin.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.jumbotron{
+    background: transparent;
+}
