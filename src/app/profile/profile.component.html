@@ -1,7 +1,7 @@
 <div class="container-fluid" id="galaxy">
   <div class="jumbotron">
       <img id="pro" src='../../assets/img/profile.jpeg' >
-    <h1>User's name</h1>
+    <h1>Hello, {{(user | async)?.email}}</h1>
   </div>
   <div class="navbar" id="private">
       <ul class="main-menu-list">

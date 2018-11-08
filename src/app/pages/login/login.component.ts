@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   public loginForm: FormGroup;
   private subscription: Subscription[] = [];
   private returnUrl: string;
-  email: string;
+  public email: string;
   password: string;
   private isLoggedIn: Boolean;
 
@@ -29,15 +29,18 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.authService.currentUser.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
+        this.router.navigate(["/login"]); 
       } else {
         this.isLoggedIn = true;
-        this.router.navigate(["/profile"]);
+        this.user = this.email;
+        this.router.navigate(["/profile/"]); 
       }
+      console.log(this.user);
     })
 }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile/{{}}';
   }
 
   login(userEmail: string, userPassword: string) {
