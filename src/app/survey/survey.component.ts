@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable,FirebaseObjectObservable } from 'angularfire2/database';
 import { MatchService } from 'app/services/match.service';
 
-import { Component } from '@angular/core';
 import { ProfileComponent } from '../profile/profile.component'
 
 

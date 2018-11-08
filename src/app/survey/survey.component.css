@@ -1,8 +1,8 @@
 #survey{
     background-image: url('../../assets/img/gold.jpg');
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
+    /* width: 100%; */
+    height: 2000px;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
 }
