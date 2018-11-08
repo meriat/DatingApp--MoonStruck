@@ -1,6 +1,5 @@
 
 <div class="container-fluid">
-
     <img src="../../../assets/img/hangheart.jpeg">
     <div class="content">
       <div class="login">
@@ -13,11 +12,12 @@
         <input #password type="password" id="password-input" placeholder="Enter Password">
         </div>
       <button type="submit" (click)="login(email.value, password.value); authStatus()" class="btn btn-primary">Submit</button>
+
       </form>
       <div class="box rotate">
           <a routerLink="/signup"><p>Sign Up</p></a>
       </div>
-     
+     <a routerLink="/profile">Matches!!!</a>
     </div>
     </div>
 </div>

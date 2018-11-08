@@ -16,6 +16,8 @@ import { ChatMessagesComponent } from './pages/chat/components/chat-messages/cha
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
 import { AuthService } from './services/auth.service';
 import { SplashComponent } from './splash/splash.component';
+import { MatchesComponent } from './matches/matches.component';
+import { ProfileComponent } from './profile/profile.component'
 import { AuthGuard } from './guards/auth.guard';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -24,11 +26,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MatchesComponent } from './matches/matches.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent, 
-    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent, SplashComponent, MatchesComponent
+    SignupComponent, ChatComponent, NavbarComponent, ChatInputComponent, ChatroomListComponent, ChatroomTitleBarComponent, ChatMessagesComponent, ChatroomWindowComponent,SurveyComponent, SplashComponent, MatchesComponent, ProfileComponent
 
   ],
   imports: [
